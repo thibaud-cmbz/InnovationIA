@@ -1,9 +1,13 @@
 import discord
 from discord.ext import commands
+import os
+from dotenv import load_dotenv
 
 # Configuration
-TOKEN = "MTE2NTkzNzE5NjI5Mzk0NzQwMg.GeaYH_.dnBuxo3x_AmZmiqzqEnk1yQLGLfGmX-kKAKT3Y"
+load_dotenv()
 PREFIX = "!"
+
+TOKEN = os.getenv("TOKEN")
 
 intents = discord.Intents.default()
 intents.typing = False
