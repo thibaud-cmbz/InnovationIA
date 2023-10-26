@@ -123,6 +123,7 @@ async def scenario(ctx):
     IS_RUNNING = True
     etapes = ["Traversée du desert pour arriver devant la base", "Persuader le militaire de nous laisser rentrer", "Escalader le grillage elecrifié", "Echapper aux serpents mutants ", "Ouvrir la dernière porte blindée"]
     response = ""
+    LIVES = 3
     async with ctx.typing():
         try:
             for i in range(5):
@@ -140,7 +141,7 @@ async def scenario(ctx):
                 response = completion.choices[0].message.content.strip()
                 await send_if_2000(ctx, response)
                 await ctx.send("**N'oubliez pas de réagir avec 👍 pour choisir la meilleure réponse**")
-                await asyncio.sleep(40)
+                await asyncio.sleep(90)
                 print("take message")
 
                 channel = bot.get_channel(int("1166346246655590533"))
